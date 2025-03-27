@@ -32,7 +32,7 @@ wins = df['Winner'].value_counts().reset_index()
 wins.columns = ['Country', 'Wins']
 #initalize dash
 app = Dash(__name__)
-
+server = app.server
 #use the wins df to get the locations of the countries, change colour by number of wins, when hovered show the country name,and find hte country by its name  to create a chjoropleth map
 base_fig = px.choropleth(
     wins,
